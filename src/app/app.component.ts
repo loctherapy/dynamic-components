@@ -15,8 +15,15 @@ export class AppComponent implements AfterContentInit {
     private resolver: ComponentFactoryResolver
   ) {}
 
+  isSurveyRequired() {
+    // emulating checking requirements to show the survey
+    return Math.random() >= 0.5;
+  }
+
   ngAfterContentInit() {
-    const surveyFormFactory = this.resolver.resolveComponentFactory(SurveyComponent);
-    const component = this.entry.createComponent(surveyFormFactory);
+    if (this.isSurveyRequired()) {
+      const surveyFormFactory = this.resolver.resolveComponentFactory(SurveyComponent);
+      const component = this.entry.createComponent(surveyFormFactory);
+    }
   }
 }
