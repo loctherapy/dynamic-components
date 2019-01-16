@@ -7,7 +7,6 @@ import { SurveyComponent } from './survey/components/survey.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterContentInit {
-  title = 'dynamic-components';
 
   @ViewChild('entry', {read: ViewContainerRef}) entry: ViewContainerRef;
 
