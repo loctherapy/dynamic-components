@@ -25,7 +25,14 @@ export class SurveyComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Submitting...');
+    const survey = {
+      experienceInJSInYears: this.surveyForm.controls['experienceInJSInYears'].value,
+      experienceInDevInYears: this.surveyForm.controls['experienceInDevInYears'].value,
+      age: this.surveyForm.controls['age'].value,
+      favoriteFramework: this.surveyForm.controls['favoriteFramework'].value
+    };
+
+    console.log(survey);
   }
 
 }
