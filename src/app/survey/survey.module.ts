@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SurveyComponent } from './survey.component';
+import { SurveyComponent } from './components/survey.component';
+import {SurveyService} from './service/survey.service';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,9 @@ import { SurveyComponent } from './survey.component';
   ],
   exports: [
     SurveyComponent
+  ],
+  providers: [
+    SurveyService
   ],
   entryComponents: [
     SurveyComponent

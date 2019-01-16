@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Framework } from '../framework/framework.enum';
+import { SurveyService } from '../service/survey.service';
 
 @Component({
   selector: 'app-survey',
@@ -9,10 +11,19 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class SurveyComponent implements OnInit {
 
   surveyForm: FormGroup;
-  frameworks: string[] = ['Angular', 'React', 'Vue', 'Ember', 'Backbone', 'ExtJS', 'Other'];
+  frameworks: Framework[] = [
+    Framework.ANGULAR,
+    Framework.REACT,
+    Framework.VUE,
+    Framework.BACKBONE,
+    Framework.EMBER,
+    Framework.EXTJS,
+    Framework.OTHER
+  ];
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private surveySurvice: SurveyService
   ) { }
 
   ngOnInit() {
@@ -20,7 +31,7 @@ export class SurveyComponent implements OnInit {
       experienceInJSInYears: [0, [Validators.required]],
       experienceInDevInYears: [0, [Validators.required]],
       age: [0, [Validators.required]],
-      favoriteFramework: ['', [Validators.required]]
+      favoriteFramework: [Framework.ANGULAR, [Validators.required]]
     });
   }
 
@@ -32,7 +43,7 @@ export class SurveyComponent implements OnInit {
       favoriteFramework: this.surveyForm.controls['favoriteFramework'].value
     };
 
-    console.log(survey);
+    this.surveySurvice.add(survey);
   }
 
 }

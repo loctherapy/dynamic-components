@@ -1,5 +1,5 @@
 import { AfterContentInit, Component, ComponentFactoryResolver, ViewChild, ViewContainerRef } from '@angular/core';
-import { SurveyComponent } from './survey/survey.component';
+import { SurveyComponent } from './survey/components/survey.component';
 
 @Component({
   selector: 'app-root',
