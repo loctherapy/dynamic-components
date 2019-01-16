@@ -1,0 +1,31 @@
+<form [formGroup]="surveyForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Experience In JavaScript (years)</label>
+  </div>
+  <div>
+    <input formControlName="experienceInJSInYears" type="number">
+  </div>
+  <div>
+    <label>Experience In Development (years)</label>
+  </div>
+  <div>
+    <input formControlName="experienceInDevInYears" type="number">
+  </div>
+  <div>
+    <label>Age (years)</label>
+  </div>
+  <div>
+    <input formControlName="age" type="number">
+  </div>
+  <div>
+    <label>Favorite Framework</label>
+  </div>
+  <div>
+    <select formControlName="favoriteFramework">
+      <option *ngFor="let framework of frameworks">{{framework}}</option>
+    </select>
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
