@@ -1,41 +1,51 @@
-<form [formGroup]="surveyForm" (ngSubmit)="onSubmit()" class="survey-form">
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      Survey
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <form [formGroup]="surveyForm" (ngSubmit)="onSubmit()" class="survey-form">
 
-  <div class="field">
-    <label class="label">Experience In JavaScript (years)</label>
-    <div class="control">
-      <input class="input" formControlName="experienceInJSInYears" type="number" placeholder="Experience in JavaScript (years)">
+        <div class="field">
+          <label class="label">Experience In JavaScript (years)</label>
+          <div class="control">
+            <input class="input" formControlName="experienceInJSInYears" type="number" placeholder="Experience in JavaScript (years)">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Experience In Development (years)</label>
+          <div class="control">
+            <input class="input" formControlName="experienceInDevInYears" type="number" placeholder="Experience in Development (years)">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Age (years)</label>
+          <div class="control">
+            <input class="input" formControlName="age" type="number" placeholder="Age (years)">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Favorite Framework</label>
+          <div class="control">
+            <div class="select">
+              <select formControlName="favoriteFramework">
+                <option *ngFor="let framework of frameworks">{{framework}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="control">
+          <button class="button is-link" type="submit">Submit</button>
+        </div>
+
+      </form>
     </div>
   </div>
-
-  <div class="field">
-    <label class="label">Experience In Development (years)</label>
-    <div class="control">
-      <input class="input" formControlName="experienceInDevInYears" type="number" placeholder="Experience in Development (years)">
-    </div>
-  </div>
-
-  <div class="field">
-    <label class="label">Age (years)</label>
-    <div class="control">
-      <input class="input" formControlName="age" type="number" placeholder="Age (years)">
-    </div>
-  </div>
-
-  <div class="field">
-    <label class="label">Favorite Framework</label>
-    <div class="control">
-      <div class="select">
-        <select formControlName="favoriteFramework">
-          <option *ngFor="let framework of frameworks">{{framework}}</option>
-        </select>
-      </div>
-    </div>
-  </div>
-
-  <div class="control">
-    <button class="button is-link" type="submit">Submit</button>
-  </div>
-
-</form>
-
+</div>
 
