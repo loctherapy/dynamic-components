@@ -25,7 +25,7 @@ export class SurveyComponent implements OnInit {
   }
 
   onSubmit() {
-
+    console.log('Submitting...');
   }
 
 }
