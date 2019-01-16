@@ -9,6 +9,7 @@ export class SurveyService {
   constructor() { }
 
   add(survey: ISurvey) {
+    // Just emulating an http call...
     console.log('Adding a survey...');
     console.log(survey);
   }
